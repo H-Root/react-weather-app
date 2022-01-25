@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const Header = () => {
   return (
-    <header className="px-2 py-3 shadow-md">
+    <header className="px-2 py-3 shadow-md bg-base-200">
       <div className="container mx-auto flex flex-row justify-between">
         <h1 className="flex gap-1 items-center text-2xl ">
           <FaCloudMoon className="text-3xl" />

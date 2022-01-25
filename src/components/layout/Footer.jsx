@@ -1,4 +1,4 @@
-import { FaBlog, FaGithub } from "react-icons/fa";
+import { FaGlobe, FaGithub } from "react-icons/fa";
 
 const Footer = () => {
   return (
@@ -31,7 +31,7 @@ const Footer = () => {
               rel="noreferrer"
               className="btn btn-ghost text-2xl"
             >
-              <FaBlog />
+              <FaGlobe />
             </a>
             <a
               href="https://"
