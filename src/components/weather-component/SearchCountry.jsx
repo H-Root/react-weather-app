@@ -5,11 +5,12 @@ import WeatherContext from "../../context/WeatherCotext";
 
 const SearchCountry = () => {
   const inputRef = useRef();
-  const { getWeather, isValid } = useContext(WeatherContext);
+  const { getWeather, isValid, setWeatherData } = useContext(WeatherContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const searchedCountry = inputRef.current.value;
+    setWeatherData("");
     await getWeather(searchedCountry);
   };
 

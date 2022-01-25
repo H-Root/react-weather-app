@@ -13,30 +13,32 @@ import {
 
 const Icon = ({ tempData }) => {
   if (tempData === "01d") {
-    return <FaSun />;
+    return <FaSun size={25} />;
   } else if (tempData === "01n") {
-    return <FaMoon />;
+    return <FaMoon size={25} />;
   } else if (tempData === "02d") {
-    return <FaCloudSun />;
+    return <FaCloudSun size={25} />;
   } else if (tempData === "02n") {
-    return <FaCloudMoon />;
+    return <FaCloudMoon size={25} />;
   } else if (
     tempData === "03d" ||
     tempData === "03n" ||
     tempData === "04d" ||
     tempData === "04n"
   ) {
-    return <FaCloud />;
+    return <FaCloud size={25} />;
   } else if (tempData === "09d" || tempData === "09n") {
-    return <FaCloudShowersHeavy />;
+    return <FaCloudShowersHeavy size={25} />;
   } else if (tempData === "10d") {
-    return <FaCloudSunRain />;
+    return <FaCloudSunRain size={25} />;
   } else if (tempData === "10n") {
-    return <FaCloudMoonRain />;
+    return <FaCloudMoonRain size={25} />;
   } else if (tempData === "11d" || tempData === "11n") {
-    return <FaBolt />;
+    return <FaBolt size={25} />;
   } else if (tempData === "13d" || tempData === "13n") {
-    return <FaSnowflake />;
+    return <FaSnowflake size={25} />;
+  } else {
+    return "No Icon !";
   }
 };
 

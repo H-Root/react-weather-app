@@ -11,7 +11,7 @@ const App = () => {
       <Router>
         <div className="flex flex-col justify-between min-h-screen">
           <Header />
-          <main className="container mx-auto max-w-md flex-1 mt-10">
+          <main className="container mx-auto max-w-md flex-1 mt-6">
             <Routes>
               <Route path="/" element={<WeatherApp />} />
               <Route path="/about" element={<About />} />
