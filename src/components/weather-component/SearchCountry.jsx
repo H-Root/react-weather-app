@@ -5,12 +5,14 @@ import WeatherContext from "../../context/WeatherCotext";
 
 const SearchCountry = () => {
   const inputRef = useRef();
-  const { getWeather, isValid, setWeatherData } = useContext(WeatherContext);
+  const { getWeather, isValid, setWeatherData, isLoading, setWeeklyData } =
+    useContext(WeatherContext);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const searchedCountry = inputRef.current.value;
     setWeatherData("");
+    setWeeklyData("");
     await getWeather(searchedCountry);
   };
 
@@ -28,9 +30,11 @@ const SearchCountry = () => {
             />
             <button
               type="submit"
-              className="absolute top-0 right-0 rounded-l-none btn btn-primary"
+              className={`absolute top-0 right-0 rounded-l-none btn btn-primary ${
+                isLoading ? "loading" : ""
+              }`}
             >
-              <FaSearch />
+              {isLoading ? "" : <FaSearch />}
             </button>
           </div>
         </div>

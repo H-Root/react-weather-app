@@ -1,18 +1,19 @@
-import { FaWind } from "react-icons/fa";
+import { FaWind, FaMapMarkerAlt } from "react-icons/fa";
 import image from "../assets/sky.jpg";
 import { useContext } from "react";
 import WeatherContext from "../../context/WeatherCotext";
 import Icon from "./Icon";
+import Spinner from "../shared/Spinner";
 
 const WeatherDisplay = () => {
   const { weatherData, country, isLoading } = useContext(WeatherContext);
 
   if (!isLoading && (!weatherData || weatherData.length === 0)) {
-    return <p className="">Search for a country</p>;
+    return <p className="mt-1 text-sm">Search for a country</p>;
   }
 
   return isLoading ? (
-    <div className="text-9xl text-red-900">Wait A Hour</div>
+    <Spinner />
   ) : (
     <div className="rounded-2xl overflow-hidden mt-5 w-full">
       <div
@@ -24,8 +25,8 @@ const WeatherDisplay = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content w-full">
           <div className="max-w-md">
-            <h1 className="mb-5 text-4xl font-bold">
-              {country} , {weatherData.sys.country}
+            <h1 className="mb-5 text-4xl font-bold flex">
+              <FaMapMarkerAlt /> {country} , {weatherData.sys.country}
             </h1>
             <div className="flex flex-col gap-4">
               <div className="text-4xl font-semibold flex gap-3 items-center  ">

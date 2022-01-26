@@ -19,6 +19,7 @@ export const WeatherProvider = ({ children }) => {
     countryName = countryName.toLowerCase();
     if (countryName.length === 0) {
       setAlert("Please Enter Something");
+      setIsLoading(false);
     } else {
       axios
         .get(
@@ -32,6 +33,7 @@ export const WeatherProvider = ({ children }) => {
           return response;
         })
         .catch((error) => {
+          setIsLoading(false);
           if (error.response.status === 404) {
             setAlert("Error 404, Country Not Found !");
           } else {
@@ -39,17 +41,17 @@ export const WeatherProvider = ({ children }) => {
           }
         });
     }
-    setIsLoading(false);
   };
 
   const getAllData = (coordinate) => {
+    setIsLoading(true);
     axios
       .get(
         `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinate.lat.toFixed(
           0
         )}&lon=${coordinate.lon.toFixed(
           0
-        )}.04&exclude=hourly,minutely&appid=6cde831adfb4ca6b822f4368547e862a`
+        )}&exclude=hourly,minutely&appid=6cde831adfb4ca6b822f4368547e862a`
       )
       .then((response) => {
         setWeeklyData(response.data);
@@ -58,6 +60,7 @@ export const WeatherProvider = ({ children }) => {
       .catch((error) => {
         setAlert("Error fetching all data, try again or check your connection");
       });
+    setIsLoading(false);
   };
 
   const setAlert = (code) => {
@@ -75,10 +78,12 @@ export const WeatherProvider = ({ children }) => {
         getWeather,
         setIsLoading,
         setWeatherData,
+        setWeeklyData,
         weatherData,
         isValid,
         isLoading,
         country,
+        weeklyData,
       }}
     >
       {children}

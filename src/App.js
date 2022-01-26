@@ -4,6 +4,7 @@ import About from "./pages/About";
 import Footer from "./components/layout/Footer";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import { WeatherProvider } from "./context/WeatherCotext";
+import Error404 from "./pages/Error404";
 
 const App = () => {
   return (
@@ -15,10 +16,7 @@ const App = () => {
             <Routes>
               <Route path="/" element={<WeatherApp />} />
               <Route path="/about" element={<About />} />
-              <Route
-                path="/*"
-                element={<h1 className="">Error 404 Nothing Found</h1>}
-              />
+              <Route path="/*" element={<Error404 />} />
             </Routes>
           </main>
           <Footer />
