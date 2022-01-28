@@ -2,12 +2,31 @@ import { useContext, useRef } from "react";
 import { FaSearch } from "react-icons/fa";
 import Alert from "../shared/Alert";
 import WeatherContext from "../../context/WeatherCotext";
+import { AnimatePresence, motion } from "framer-motion";
+
+const animationVariants = {
+  initial: {
+    x: "100vw",
+    opacity: 0,
+  },
+  animate: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      when: "beforeChildren",
+      staggerChildren: 2,
+    },
+  },
+  exit: {
+    x: "-100vw",
+    opacity: 0,
+  },
+};
 
 const SearchCountry = () => {
   const inputRef = useRef();
   const { getWeather, isValid, setWeatherData, isLoading, setWeeklyData } =
     useContext(WeatherContext);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
     const searchedCountry = inputRef.current.value;
@@ -18,7 +37,18 @@ const SearchCountry = () => {
 
   return (
     <>
-      {!isValid.valid && <Alert isValid={isValid} />}
+      <AnimatePresence>
+        {!isValid.valid && (
+          <motion.div
+            variants={animationVariants}
+            initial="initial"
+            animate="animate"
+            exit="exit"
+          >
+            <Alert isValid={isValid} />
+          </motion.div>
+        )}
+      </AnimatePresence>
       <form onSubmit={handleSubmit}>
         <div className="form-control">
           <div className="relative">

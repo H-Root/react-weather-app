@@ -1,9 +1,21 @@
 import { FaCloudMoon } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Header = () => {
   return (
-    <header className="px-2 py-3 shadow-md bg-base-200">
+    <motion.header
+      className="px-2 py-3 shadow-md bg-base-200"
+      initial={{ y: -200, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{
+        duration: 0.7,
+        ease: "",
+        delay: 0.2,
+        type: "spring",
+        stiffness: 50,
+      }}
+    >
       <div className="container mx-auto flex flex-row justify-between">
         <h1 className="flex gap-1 items-center text-2xl ">
           <FaCloudMoon className="text-3xl" />
@@ -18,7 +30,7 @@ const Header = () => {
           </Link>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 };
 
