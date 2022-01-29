@@ -2,7 +2,7 @@ import Day from "./Day";
 
 const DaysList = ({ allDays }) => {
   return (
-    <div className="w-full shadow stats">
+    <div className="w-full shadow stats scrollbarStyle">
       {allDays.map((day, index) => {
         return (
           <div key={day.dt} className="stat gap-x-4">

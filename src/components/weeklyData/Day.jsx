@@ -24,8 +24,8 @@ const Day = ({ day, index }) => {
       </div>
       <div className="stat-title">{day.weather[0].description}</div>
       <div className="stat-value"> {(day.temp.day - 273).toFixed(1)}&#176;</div>
-      <div className="stat-desc">{`${handleDate(tempDate).month}/${
-        handleDate(tempDate).day
+      <div className="stat-desc">{`${handleDate(tempDate).day}/${
+        handleDate(tempDate).month
       }`}</div>
     </>
   );

@@ -9,7 +9,7 @@ const WeatherDisplay = () => {
   const { weatherData, country, isLoading } = useContext(WeatherContext);
 
   if (!isLoading && (!weatherData || weatherData.length === 0)) {
-    return <p className="mt-1 text-sm">Search for a country</p>;
+    return <p className="mt-1 text-sm">Enter a valid country/city name</p>;
   }
 
   return isLoading ? (
@@ -25,6 +25,9 @@ const WeatherDisplay = () => {
         <div className="hero-overlay bg-opacity-60"></div>
         <div className="hero-content text-neutral-content w-full">
           <div className="max-w-md">
+            <div className="text-sm font-light text-white pb-3">
+              Current Weather:
+            </div>
             <h1 className="mb-5 text-4xl font-bold flex">
               <FaMapMarkerAlt /> {country} , {weatherData.sys.country}
             </h1>

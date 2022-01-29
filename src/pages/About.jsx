@@ -45,9 +45,9 @@ const About = () => {
               <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
               <p className="mb-5">
                 This web app was created using React.js ,Tailwind ,Daisy UI,
-                Framer-Motion and Other Tools
+                etc...
                 <br />
-                Hope You Enjoy This Project And Hire Me 🙂 ASAP!
+                Hope You Enjoy This Project, And My Other Projects
               </p>
               <a
                 href="https://hroot.netlify.app"

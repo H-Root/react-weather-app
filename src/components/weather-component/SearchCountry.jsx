@@ -36,7 +36,7 @@ const SearchCountry = () => {
   };
 
   return (
-    <>
+    <div className="relative">
       <AnimatePresence>
         {!isValid.valid && (
           <motion.div
@@ -69,7 +69,7 @@ const SearchCountry = () => {
           </div>
         </div>
       </form>
-    </>
+    </div>
   );
 };
 
