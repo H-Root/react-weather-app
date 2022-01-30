@@ -1,10 +1,32 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "name": "Weather App Built With React",
+  "short_name": "Weather App",
+  "description": "Weather App Built With React To Show You The Weather ... Woow I Know",
+  "lang": "en-US",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "theme_color": "#1B1D1D",
   "icons": [
     {
       "src": "favicon.ico",
-      "sizes": "64x64 32x32 24x24 16x16",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "32x32",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "24x24",
+      "type": "image/x-icon"
+    },
+    {
+      "src": "favicon.ico",
+      "sizes": "16x16",
       "type": "image/x-icon"
     },
     {
@@ -18,8 +40,6 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": ".",
-  "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "background_color": "#000",
+  "dir": "ltr"
 }

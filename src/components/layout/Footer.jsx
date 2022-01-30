@@ -50,7 +50,7 @@ const Footer = () => {
                 >
                   <FaReact size={25} />
                 </motion.div>
-                React,React-Router
+                React, React Router V6
               </div>
             </div>
           </div>
