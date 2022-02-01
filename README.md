@@ -1,5 +1,7 @@
 # Getting Started with Create React App
 
+# IF YOU WANT TO TEST IT ON YOUR LOCAL MACHINE PLEASE MAKE SURE TO GENERATE A NEW API KEY FROM [Open Weather Map](https://home.openweathermap.org/api_keys).
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
