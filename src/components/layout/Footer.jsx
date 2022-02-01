@@ -66,7 +66,7 @@ const Footer = () => {
                 <FaGlobe />
               </a>
               <a
-                href="https://"
+                href="https://github.com/H-Root/react-weather-app"
                 target="_blank"
                 rel="noreferrer"
                 className="btn btn-ghost text-2xl"
