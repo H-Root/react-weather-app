@@ -23,7 +23,7 @@ export const WeatherProvider = ({ children }) => {
     } else {
       axios
         .get(
-          `https://api.openweathermap.org/data/2.5/weather?q=${countryName}&appid=6cde831adfb4ca6b822f4368547e862a`
+          `https://api.openweathermap.org/data/2.5/weather?q=${countryName}&appid=${process.env.REACT_APP_OPEN_WEATHER_TOKEN}`
         )
         .then((response) => {
           console.log(response.data);
@@ -42,17 +42,11 @@ export const WeatherProvider = ({ children }) => {
         });
     }
   };
-
+  
   const getAllData = (coordinate) => {
     setIsLoading(true);
     axios
-      .get(
-        `https://api.openweathermap.org/data/2.5/onecall?lat=${coordinate.lat.toFixed(
-          0
-        )}&lon=${coordinate.lon.toFixed(
-          0
-        )}&exclude=hourly,minutely&appid=6cde831adfb4ca6b822f4368547e862a`
-      )
+      .get(`https://api.openweathermap.org/data/2.5/onecall?lat=${coordinate.lat.toFixed(2)}&lon=${coordinate.lon.toFixed(2)}&exclude=hourly,minutely&appid=${process.env.REACT_APP_OPEN_WEATHER_TOKEN}`)
       .then((response) => {
         setWeeklyData(response.data);
         console.log(response.data);
